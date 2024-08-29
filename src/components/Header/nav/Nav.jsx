@@ -3,9 +3,9 @@ import styles from './style.module.scss';
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { menuSlide } from '../animation';
-import Link from './Link';
-import Curve from './Curve';
-import Footer from './Footer';
+import Link from './Link/Links.jsx';
+import Curve from './Curve/Curve';
+import Footer from './Footer/Footer';
 
 const navItems = [
   {
@@ -26,17 +26,17 @@ const navItems = [
   },
 ]
 
-export default function index() {
+export default function Nav() {
 
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
 
   return (
-    <motion.div 
-      variants={menuSlide} 
-      initial="initial" 
-      animate="enter" 
-      exit="exit" 
+    <motion.div
+      variants={menuSlide}
+      initial="initial"
+      animate="enter"
+      exit="exit"
       className={styles.menu}
       >
        <div className={styles.body}>
@@ -46,10 +46,10 @@ export default function index() {
                     </div>
                     {
                       navItems.map( (data, index) => {
-                        return <Link 
-                        key={index} 
-                        data={{...data, index}} 
-                        isActive={selectedIndicator == data.href} 
+                        return <Link
+                        key={index}
+                        data={{...data, index}}
+                        isActive={selectedIndicator == data.href}
                         setSelectedIndicator={setSelectedIndicator}>
                         </Link>
                       })

@@ -41,7 +41,7 @@ const slider2 = [
     }
 ]
 
-export default function index() {
+export default function slidingImages() {
 
     const container = useRef(null);
     const { scrollYProgress } = useScroll({
@@ -60,7 +60,7 @@ export default function index() {
                         slider1.map( (project, index) => {
                             return <div key={index} className={styles.project} style={{backgroundColor: project.color}} >
                                 <div className={styles.imageContainer}>
-                                    <Image 
+                                    <Image
                                     fill={true}
                                     alt={"image"}
                                     src={`/images/${project.src}`}/>
@@ -74,7 +74,7 @@ export default function index() {
                         slider2.map( (project, index) => {
                             return <div key={index} className={styles.project} style={{backgroundColor: project.color}} >
                                 <div key={index} className={styles.imageContainer}>
-                                    <Image 
+                                    <Image
                                     fill={true}
                                     alt={"image"}
                                     src={`/images/${project.src}`}/>

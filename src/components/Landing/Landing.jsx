@@ -6,9 +6,9 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { slideUp } from './animation';
 import { motion } from 'framer-motion';
-import Magnetic from '../../common/Magnetic';
+import Magnetic from '../../common/Magnetic/Magnetic';
 
-export default function Home() {
+export default function Landing() {
 
   const firstText = useRef(null);
   const secondText = useRef(null);

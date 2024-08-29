@@ -2,9 +2,9 @@ import styles from './style.module.scss';
 import { useInView, motion } from 'framer-motion';
 import { useRef } from 'react';
 import { slideUp, opacity } from './animation';
-import Rounded from '../../common/RoundedButton';
-export default function index() {
+import Rounded from '../../common/RoundedButton/Rounded';
 
+export default function Animation() {
     const phrase = "Helping brands to stand out in the digital era. Together we will set the new status quo. No nonsense, always on the cutting edge.";
     const description = useRef(null);
     const isInView = useInView(description)

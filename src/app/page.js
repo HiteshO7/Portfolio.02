@@ -2,13 +2,13 @@
 import styles from './page.module.scss'
 import { useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion';
-import Preloader from '../components/Preloader';
-import Landing from '../components/Landing';
-import Projects from '../components/Projects';
-import Blur from '../components/Blur';
-import Description from '../components/Description';
-import SlidingImages from '../components/SlidingImages';
-import Contact from '../components/Contact';
+import Preloader from '../components/Preloader/Preloader';
+import Landing from '../components/Landing/Landing';
+import Projects from '../components/Projects/Project';
+import Blur from '../components/Blur/Blur';
+import Description from '../components/Description/Animation.jsx';
+import SlidingImages from '../components/SlidingImages/SlidingImages';
+import Contact from '../components/Contact/Contact';
 
 export default function Home() {
 
