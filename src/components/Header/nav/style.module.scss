@@ -20,6 +20,9 @@
             font-size: 56px;
             gap: 12px;
             margin-top: 80px;
+            @media (max-width: 400px) {
+                font-size: 42px;
+              }
 
             .header{
                 color: rgb(153, 153, 153);
@@ -34,7 +37,10 @@
                 color: white;
                 font-weight: 300;
             }
-            
+
         }
     }
+    @media (max-width: 500px) {
+        width: 100%; // Adjust for mobile screens
+      }
 }

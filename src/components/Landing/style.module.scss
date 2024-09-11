@@ -13,8 +13,11 @@
       position: absolute;
       top: calc(100vh - 325px); /* Default position */
 
-      @media (max-width: 768px) {
-        top: calc(100vh - 450px); /* Shifted upward on smaller screens */
+      @media (max-width: 1020px) {
+        top: calc(100vh - 400px); /* Shifted upward on smaller screens */
+      }
+      @media (max-width: 400px) {
+        top: calc(100vh - 350px); /* Shifted upward on smaller screens */
       }
     }
 
@@ -30,6 +33,12 @@
       font-size: 230px;
       font-weight: 500;
       padding-right: 50px;
+      @media (max-width: 1020px){
+        font-size: 180px;
+      }
+      @media (max-width: 400px) {
+        font-size: 160px;
+      }
     }
 
     .slider p:nth-of-type(2) {
@@ -56,7 +65,7 @@
         margin-bottom: 100px;
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: 1020px) {
         top: calc(100vh - 150px); /* Position it below the slider container */
         left: 20px; /* Align it to the left side of the screen */
         font-size: 2em; /* Adjust font size for smaller screens */

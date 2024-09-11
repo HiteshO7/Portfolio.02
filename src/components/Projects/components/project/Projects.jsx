@@ -8,7 +8,7 @@ export default function Projects({index, title, manageModal}) {
         <div onMouseEnter={(e) => {manageModal(true, index, e.clientX, e.clientY)}} onMouseLeave={(e) => {manageModal(false, index, e.clientX, e.clientY)}} className={styles.project}>
 
             <h2>{title}</h2>
-            <p>Design & Development</p>
+            <p>Design & Development</p> 
         </div>
     )
 }

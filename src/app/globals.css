@@ -1,13 +1,14 @@
+
 @font-face {
     font-family: 'NeueMontreal';
     src: url('/fonts/NeueMontreal-Regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
   }
- 
-body{
+
+  body {
     font-family: 'NeueMontreal', sans-serif;
     margin: 0px;
-    overflow: hidden; /* Hide scrollbars */
+    overflow: hidden;
     cursor: wait;
-}
+  }

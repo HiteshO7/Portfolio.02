@@ -1,72 +1,119 @@
-.projects{
+.projects {
     display: flex;
     align-items: center;
     padding-left: 200px;
     padding-right: 200px;
     flex-direction: column;
-    margin-top: 300px;
+    margin-top: 100px;
+    overflow: hidden;
 
-    .body{
-        max-width: 1400px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 100px;
-    }
-    
-    .modalContainer{
-        height: 350px;
-        width: 400px;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        background-color: white;
-        pointer-events: none;
-        overflow: hidden;
-        z-index: 3;
-    }
-    
-    .modalSlider{
-        height: 100%;
-        width: 100%;
-        position: relative;
-        transition: top 0.5s cubic-bezier(0.76, 0, 0.24, 1);
-    }
-    
-    .modal{
-        height: 100%;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .modal img{
-        height: auto;
-    }
-    
-    .cursor, .cursorLabel{
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        background-color: #455CE9;
-        color: white;
-        position: fixed;
-        z-index:3;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 14px;
-        font-weight: 300;
-        pointer-events: none;
-    }
-    
-    .cursorLabel{
-        background-color: transparent;
-    }
-    
-    
-}
+    .body {
+      max-width: 1400px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 100px;
 
+      .project-item {
+        margin-right: 20px; // Space between project items
+      }
+    }
+
+    .modalContainer {
+      height: 350px;
+      width: 400px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      background-color: white;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 3;
+    }
+
+    .modalSlider {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      transition: top 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+
+    .modal {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal img {
+      height: auto;
+    }
+
+    .cursor,
+    .cursorLabel {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #455CE9;
+      color: white;
+      position: fixed;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 300;
+      pointer-events: none;
+    }
+
+    .cursorLabel {
+      background-color: transparent;
+    }
+
+    .toppro {
+      width: 100%;
+    }
+
+    .toph1 {
+      font-size: 1.5em;
+      font-weight: 400;
+      margin-bottom: 10px; // Space below the title
+    }
+
+    @media (max-width: 540px) {
+      padding-left: 20px;
+      padding-right: 20px;
+
+      .toph1 {
+        font-size: 1.2em;
+        margin-bottom: 15px; // Increase space for mobile view
+      }
+
+      .body {
+        .project-item {
+          margin-bottom: 30px; // Increase space between projects in mobile view
+          font-size: 0.9em; // Reduce font size for project names
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      padding-left: 50px;
+      padding-right: 50px;
+
+      .toph1 {
+        font-size: 1.4em; // Slightly smaller title font size for tablets
+        margin-bottom: 12px; // Adjust space below the title for tablets
+      }
+
+      .body {
+        .project-item {
+          margin-bottom: 25px; // Adjust space between projects for tablets
+          font-size: 1em; // Adjust font size for project names on tablets
+        }
+      }
+    }
+  }

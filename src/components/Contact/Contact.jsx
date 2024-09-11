@@ -2,7 +2,7 @@ import styles from './style.module.scss';
 import Image from 'next/image';
 import Rounded from '../../common/RoundedButton/Rounded';
 import { useRef } from 'react';
-import { useScroll, motion, useTransform, useSpring } from 'framer-motion';
+import { useScroll, motion, useTransform } from 'framer-motion';
 import Magnetic from '../../common/Magnetic/Magnetic';
 import { Herr_Von_Muellerhoff } from 'next/font/google';
 
@@ -15,6 +15,7 @@ export default function Contact() {
     const x = useTransform(scrollYProgress, [0, 1], [0, 100])
     const y = useTransform(scrollYProgress, [0, 1], [-500, 0])
     const rotate = useTransform(scrollYProgress, [0, 1], [120, 90])
+
     return (
         <motion.div style={{y}} ref={container} className={styles.contact}>
             <div className={styles.body}>
@@ -31,7 +32,7 @@ export default function Contact() {
                     </span>
                     <h2>together</h2>
                     <motion.div style={{x}} className={styles.buttonContainer}>
-                        <Rounded  backgroundColor={"#334BD3"} className={styles.button}>
+                        <Rounded backgroundColor={"#334BD3"} className={styles.button}>
                             <p>Get in touch</p>
                         </Rounded>
                     </motion.div>
@@ -40,40 +41,40 @@ export default function Contact() {
                     </motion.svg>
                 </div>
                 <div className={styles.nav}>
-                        <Rounded>
+                    <Rounded>
+                        <a href="mailto:HiteshThakur695@gmail.com" className={styles.link}>
                             <p>HiteshThakur695@gmail.com</p>
-                        </Rounded>
-                        <Rounded>
+                        </a>
+                    </Rounded>
+                    <Rounded>
+                        <a href="tel:+917876180311" className={styles.link}>
                             <p>+91 78761 80311</p>
-                        </Rounded>
+                        </a>
+                    </Rounded>
                 </div>
                 <div className={styles.info}>
+                    <h3>SOCIALS</h3>
                     <div>
-                        <span>
-                            <h3>Version</h3>
-                            <p>2022 © Edition</p>
-                        </span>
-                        <span>
-                            <h3>Version</h3>
-                            <p>11:49 PM GMT+2</p>
-                        </span>
-                    </div>
-                    <div>
-                        <span>
-                            <h3>socials</h3>
+                        <a href="https://github.com/HiteshO7" target="_blank" rel="noopener noreferrer" className={styles.link}>
                             <Magnetic>
                                 <p>Github</p>
                             </Magnetic>
-                        </span>
-                        <Magnetic>
-                            <p>Instagram</p>
-                        </Magnetic>
-                        <Magnetic>
-                            <p>Twitter</p>
-                        </Magnetic>
-                        <Magnetic>
-                            <p>Linkedin</p>
-                        </Magnetic>
+                        </a>
+                        <a href="https://www.instagram.com/_hitesh.thakur/" target="_blank" rel="noopener noreferrer" className={styles.link}>
+                            <Magnetic>
+                                <p>Instagram</p>
+                            </Magnetic>
+                        </a>
+                        <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className={styles.link}>
+                            <Magnetic>
+                                <p>Twitter</p>
+                            </Magnetic>
+                        </a>
+                        <a href="https://www.linkedin.com/in/hitesh-thakur07/" target="_blank" rel="noopener noreferrer" className={styles.link}>
+                            <Magnetic>
+                                <p>Linkedin</p>
+                            </Magnetic>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -55,7 +55,7 @@ export default function Header() {
                     </Magnetic>
                     <Magnetic>
                         <div className={styles.el}>
-                            <a>About</a>
+                            <a href='/about'>About</a>
                             <div className={styles.indicator}></div>
                         </div>
                     </Magnetic>

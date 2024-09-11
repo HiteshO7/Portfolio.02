@@ -9,15 +9,27 @@
     transition: all 0.2s;
 
     h2{
-        font-size: 60px;
+        font-size: 100px;
         margin: 0px;
         font-weight: 400;
         transition: all 0.4s;
+        @media (max-width: 970px){
+            font-size: 64px
+        }
+        @media (max-width: 500px){
+            font-size: 36px
+        }
     }
 
     p{
         transition: all 0.4s;
         font-weight: 300;
+        @media (max-width: 840px){
+            font-size: 12px
+        }
+        @media (max-width: 400px){
+            font-size: 12px
+        }
     }
 
     &:last-of-type{

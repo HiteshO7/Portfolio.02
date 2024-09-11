@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'AuthorBold';
+    src: url('/fonts/Author-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  .authorFont {
+    font-family: 'AuthorBold', sans-serif;
+  }
+
+
 .nameblur {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -5,8 +17,7 @@
     margin-top: 200px;
     padding: 100px;
     gap: 60px;
-    color: black;
-    font-weight: 500;
+    color: black; 
     font-size: 9em;
 
     @media (max-width: 1200px) {

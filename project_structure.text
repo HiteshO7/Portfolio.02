@@ -1,0 +1,90 @@
+- .eslintrc.json
+- .gitignore
+- jsconfig.json
+- next.config.js
+- package-lock.json
+- package.json
+- project_structure.text
+- public
+  - fonts
+    - Author-Bold.otf
+    - NeueMontreal-Regular.otf
+  - images
+    - background2.jpg
+    - bgg.jpg
+    - c2.jpg
+    - c2montreal.png
+    - decimal.jpg
+    - funny.jpg
+    - google.jpg
+    - locomotive.png
+    - maven.jpg
+    - officestudio.png
+    - panda.jpg
+    - powell.jpg
+    - silencio.png
+    - wix.jpg
+- README.md
+- src
+  - app
+    - globals.css
+    - layout.js
+    - page.js
+    - page.module.scss
+  - common
+    - Magnetic
+      - Magnetic.jsx
+    - RoundedButton
+      - Rounded.jsx
+      - style.module.scss
+  - components
+    - Blur
+      - Blur.jsx
+      - style.module.scss
+    - Contact
+      - Contact.jsx
+      - style.module.scss
+    - Description
+      - animation.js
+      - Animation.jsx
+      - style.module.scss
+    - Header
+      - animation.js
+      - Header.jsx
+      - nav
+        - Curve
+          - Curve.jsx
+          - styles.module.scss
+        - Footer
+          - Footer.jsx
+          - style.module.scss
+        - Link
+          - Links.jsx
+          - style.module.scss
+        - Nav.jsx
+        - style.module.scss
+      - style.module.scss
+    - Landing
+      - animation.js
+      - Landing.jsx
+      - style.module.scss
+    - Layout
+      - Curve
+        - anim.js
+        - index.jsx
+        - style.scss
+    - MySVG.jsx
+    - Preloader
+      - anim.js
+      - Preloader.jsx
+      - style.module.scss
+    - Projects
+      - components
+        - project
+          - Projects.jsx
+          - style.module.scss
+      - Project.jsx
+      - style.module.scss
+    - SlidingImages
+      - SlidingImages.jsx
+      - style.module.scss
