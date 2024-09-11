@@ -15,12 +15,13 @@ export default function Header() {
     const pathname = usePathname();
     const button = useRef(null);
 
+    // This effect will reset the state of `isActive` when the route changes
     useEffect(() => {
-        if (isActive) setIsActive(false)
-    }, [pathname])
+        setIsActive(false);
+    }, [pathname]); // Only depend on pathname, not isActive
 
     useLayoutEffect(() => {
-        gsap.registerPlugin(ScrollTrigger)
+        gsap.registerPlugin(ScrollTrigger);
         gsap.to(button.current, {
             scrollTrigger: {
                 trigger: document.documentElement,
@@ -29,12 +30,11 @@ export default function Header() {
                 onLeave: () => { gsap.to(button.current, { scale: 1, duration: 0.25, ease: "power1.out" }) },
                 onEnterBack: () => { gsap.to(button.current, { scale: 0, duration: 0.25, ease: "power1.out" }, setIsActive(false)) }
             }
-        })
-    }, [])
+        });
+    }, []);
 
     return (
         <>
-
             <div ref={header} className={styles.header}>
                 <Magnetic>
                     <div className={styles.logo}>
@@ -68,7 +68,7 @@ export default function Header() {
                 </div>
             </div>
             <div ref={button} className={styles.headerButtonContainer}>
-                <Rounded onClick={() => { setIsActive(!isActive) }} className={`${styles.button}`}>
+                <Rounded onClick={() => setIsActive(!isActive)} className={`${styles.button}`}>
                     <div className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}></div>
                 </Rounded>
             </div>
@@ -76,5 +76,5 @@ export default function Header() {
                 {isActive && <Nav />}
             </AnimatePresence>
         </>
-    )
+    );
 }

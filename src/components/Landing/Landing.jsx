@@ -13,8 +13,8 @@ export default function Landing() {
   const firstText = useRef(null);
   const secondText = useRef(null);
   const slider = useRef(null);
-  let xPercent = 0;
-  let direction = -1;
+  const xPercent = useRef(0); // UseRef for mutable xPercent value
+  const direction = useRef(-1); // UseRef to store direction
   const speedMultiplier = .06;  // Adjust this to control speed
 
   useLayoutEffect(() => {
@@ -25,7 +25,7 @@ export default function Landing() {
         scrub: 0.25,
         start: 0,
         end: window.innerHeight,
-        onUpdate: e => direction = e.direction * -1,
+        onUpdate: e => direction.current = e.direction * -1, // Update direction.current
       },
       x: "-500px",
     });
@@ -33,15 +33,15 @@ export default function Landing() {
   }, []);
 
   const animate = () => {
-    if (xPercent < -100) {
-      xPercent = 0;
-    } else if (xPercent > 0) {
-      xPercent = -100;
+    if (xPercent.current < -100) {
+      xPercent.current = 0;
+    } else if (xPercent.current > 0) {
+      xPercent.current = -100;
     }
-    gsap.set(firstText.current, { xPercent: xPercent });
-    gsap.set(secondText.current, { xPercent: xPercent });
+    gsap.set(firstText.current, { xPercent: xPercent.current });
+    gsap.set(secondText.current, { xPercent: xPercent.current });
     requestAnimationFrame(animate);
-    xPercent += speedMultiplier * direction;
+    xPercent.current += speedMultiplier * direction.current; // Use direction.current and xPercent.current
   };
 
   return (
