@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'NeueMontreal';
     src: url('/fonts/NeueMontreal-Regular.otf') format('opentype');
@@ -9,6 +8,6 @@
   body {
     font-family: 'NeueMontreal', sans-serif;
     margin: 0px;
-    overflow: hidden;
-    cursor: wait;
+    overflow-x: hidden; /* Prevent horizontal scrolling but allow vertical */
+    cursor: default; /* Reset cursor to default */
   }
