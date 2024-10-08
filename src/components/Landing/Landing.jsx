@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image';
 import styles from './style.module.scss';
-import { useRef, useLayoutEffect } from 'react';
+import { useRef, useLayoutEffect, useCallback } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { slideUp } from './animation';
@@ -15,7 +15,19 @@ export default function Landing() {
   const slider = useRef(null);
   const xPercent = useRef(0); // UseRef for mutable xPercent value
   const direction = useRef(-1); // UseRef to store direction
-  const speedMultiplier = .06;  // Adjust this to control speed
+  const speedMultiplier = 0.06; // Adjust this to control speed
+
+  const animate = useCallback(() => {
+    if (xPercent.current < -100) {
+      xPercent.current = 0;
+    } else if (xPercent.current > 0) {
+      xPercent.current = -100;
+    }
+    gsap.set(firstText.current, { xPercent: xPercent.current });
+    gsap.set(secondText.current, { xPercent: xPercent.current });
+    requestAnimationFrame(animate);
+    xPercent.current += speedMultiplier * direction.current; // Use direction.current and xPercent.current
+  }, []);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -29,20 +41,9 @@ export default function Landing() {
       },
       x: "-500px",
     });
-    requestAnimationFrame(animate);
-  }, []);
 
-  const animate = () => {
-    if (xPercent.current < -100) {
-      xPercent.current = 0;
-    } else if (xPercent.current > 0) {
-      xPercent.current = -100;
-    }
-    gsap.set(firstText.current, { xPercent: xPercent.current });
-    gsap.set(secondText.current, { xPercent: xPercent.current });
-    requestAnimationFrame(animate);
-    xPercent.current += speedMultiplier * direction.current; // Use direction.current and xPercent.current
-  };
+    requestAnimationFrame(animate); // animate is now stable
+  }, [animate]); // Include animate in dependency array
 
   return (
     <motion.main variants={slideUp} initial="initial" animate="enter" className={styles.landing}>
@@ -55,15 +56,15 @@ export default function Landing() {
       <div className={styles.sliderContainer}>
         <div ref={slider} className={styles.slider}>
           <p ref={firstText}>Hitesh Thakur -</p>
-          <p ref={secondText}>Hitesh Thakur-</p>
+          <p ref={secondText}>Hitesh Thakur -</p>
         </div>
       </div>
 
       <Magnetic>
-      <div data-scroll data-scroll-speed={0.1} className={styles.description}>
-        <p>Freelance   &nbsp;&nbsp;&nbsp;&nbsp;  &#8599;</p>
-        <p>Designer & Developer</p>
-      </div>
+        <div data-scroll data-scroll-speed={0.1} className={styles.description}>
+          <p>Freelance   &nbsp;&nbsp;&nbsp;&nbsp;  &#8599;</p>
+          <p>Designer & Developer</p>
+        </div>
       </Magnetic>
     </motion.main>
   );

@@ -117,7 +117,7 @@ export default function AboutHelp() {
                         variants={textVariant}
                         viewport={{ once: true, amount: 1 }}
                     >
-                        A complete website from concept to implementation, that's what makes me stand out. My great sense for design and my development skills enable me to create kick-ass projects.
+                        A complete website from concept to implementation, that&apos;s what makes me stand out. My great sense for design and my development skills enable me to create kick-ass projects.
                     </motion.p>
                 </motion.div>
             </div>

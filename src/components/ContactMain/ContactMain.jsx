@@ -3,6 +3,7 @@ import { useState } from 'react';
 import styles from './style.module.scss';
 import Rounded from '../../common/RoundedButton/Rounded';
 import Magnetic from '../../common/Magnetic/Magnetic';
+import Image from 'next/image'; // Import Image from next/image
 
 export default function ContactMain() {
     const [inputValues, setInputValues] = useState({
@@ -59,13 +60,13 @@ export default function ContactMain() {
         <div className={styles.main}>
             <div className={styles.left}>
                 <div className={styles.title}>
-                    <h1 className={styles.hh}>Let's start a project together</h1>
+                    <h1 className={styles.hh}>Let&apos;s start a project together</h1>
                 </div>
                 <form className={styles.form} onSubmit={handleSubmit}>
                     {[
                         { id: '01', label: "What's your name?", name: 'name', placeholder: 'Hitesh Thakur ..' },
                         { id: '02', label: "What's your email?", name: 'email', placeholder: 'Jhon@doe.com' },
-                        { id: '03', label: "What's the name of your organization?", name: 'org', placeholder: 'Jhon & Doe' },
+                        { id: '03', label: "What's the name of your organization?", name: 'org', placeholder: 'Jhon &amp; Doe' },
                         { id: '04', label: 'What services are you looking for?', name: 'services', placeholder: 'Web Design, Web Dev' },
                         { id: '05', label: 'Your message', name: 'message', placeholder: 'Hello Hitesh, can you help me with...*' },
                     ].map(({ id, label, name, placeholder }) => (
@@ -99,7 +100,14 @@ export default function ContactMain() {
             </div>
             <div className={styles.right}>
                 <div className={styles.profileContainer}>
-                    <img src="/images/bgg.jpg" alt="Profile" className={styles.profileImage} />
+                    {/* Replace img with Image component */}
+                    <Image
+                        src="/images/bgg.jpg" // Provide the correct image path
+                        alt="Profile" // Add a meaningful alt text
+                        className={styles.profileImage} // Use the same class for styling
+                        width={500} // Set width according to your layout
+                        height={300} // Set height according to your layout
+                    />
                     <div className={styles.arrow}>&#8600;</div>
                 </div>
                 <div className={styles.contactDetails}>
