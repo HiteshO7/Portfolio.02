@@ -7,12 +7,8 @@
     gap: 60px;
     color: transparent;
     font-size: 9em;
-    font-weight: 400;
-    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: black;
-
-
-
 
     @media (max-width: 1200px) {
       font-size: 5em;
@@ -20,7 +16,6 @@
       grid-template-rows: repeat(var(--row), 80px);
       gap: 20px;
       padding: 40px;
-      -webkit-text-stroke-width: 2px;
     }
 
     @media (max-width: 768px) {
@@ -29,7 +24,6 @@
       grid-template-rows: repeat(var(--row), 70px);
       gap: 15px;
       padding: 30px;
-      -webkit-text-stroke-width: 1px;
     }
 
     @media (max-width: 480px) {
@@ -38,7 +32,6 @@
       grid-template-rows: repeat(var(--row), 50px);
       gap: 10px;
       padding: 20px;
-      -webkit-text-stroke-width: 1px;
     }
   }
 
@@ -103,3 +96,4 @@
       grid-column: span 2; /* Ensures these items take up more space */
     }
   }
+  

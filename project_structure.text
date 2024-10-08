@@ -4,7 +4,6 @@
 - next.config.js
 - package-lock.json
 - package.json
-- project_structure.text
 - public
   - fonts
     - Author-Bold.otf
@@ -27,10 +26,17 @@
 - README.md
 - src
   - app
+    - about
+      - page.js
+    - contact
+      - page.js
+      - style.module.scss
     - globals.css
     - layout.js
     - page.js
     - page.module.scss
+    - work
+      - page.js
   - common
     - Magnetic
       - Magnetic.jsx
@@ -38,9 +44,13 @@
       - Rounded.jsx
       - style.module.scss
   - components
+    - AboutMain
+      - AboutMain.jsx
     - Blur
       - Blur.jsx
       - style.module.scss
+      - utils
+        - useMousePosition.js
     - Contact
       - Contact.jsx
       - style.module.scss
@@ -71,8 +81,8 @@
     - Layout
       - Curve
         - anim.js
-        - index.jsx
-        - style.scss
+        - Curve.jsx
+        - style.module.scss
     - MySVG.jsx
     - Preloader
       - anim.js

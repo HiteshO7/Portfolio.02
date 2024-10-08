@@ -12,14 +12,15 @@ import Magnetic from '../../common/Magnetic/Magnetic';
 export default function Header() {
     const header = useRef(null);
     const [isActive, setIsActive] = useState(false);
-    const pathname = usePathname();
+    const pathname = usePathname(); // Get the current route
     const button = useRef(null);
 
-    // This effect will reset the state of `isActive` when the route changes
+    // Reset `isActive` when the route changes
     useEffect(() => {
         setIsActive(false);
-    }, [pathname]); // Only depend on pathname, not isActive
+    }, [pathname]);
 
+    // GSAP Scroll Animation for Button
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
         gsap.to(button.current, {
@@ -33,35 +34,49 @@ export default function Header() {
         });
     }, []);
 
+    // Define the text color based on the route
+    const getTextColor = () => {
+        if (pathname === '/about') return 'black'; // For example, red for the About page
+        if (pathname === '/work') return 'black'; // Blue for the Work page
+        if (pathname === '/contact') return 'white'; // Green for the Contact page
+        return 'white'; // Default color for other pages
+    };
+
     return (
         <>
             <div ref={header} className={styles.header}>
                 <Magnetic>
                     <div className={styles.logo}>
-                        <p className={styles.copyright}>©</p>
+                        <p className={styles.copyright} style={{ color: getTextColor() }}>©</p>
                         <div className={styles.name}>
-                            <p className={styles.codeBy}>Code by</p>
-                            <p className={styles.Hitesh}>Hitesh</p>
-                            <p className={styles.Thakur}>Thakur</p>
+                            <p className={styles.codeBy} style={{ color: getTextColor() }}>Code by</p> {/* Dynamic Text Color */}
+                            <p className={styles.Hitesh} style={{ color: getTextColor() }}>Hitesh</p> {/* Dynamic Text Color */}
+                            <p className={styles.Thakur} style={{ color: getTextColor() }}>&nbsp;&nbsp;Thakur</p> {/* Dynamic Text Color */}
                         </div>
                     </div>
                 </Magnetic>
                 <div className={styles.nav}>
-                    <Magnetic>
+                <Magnetic>
                         <div className={styles.el}>
-                            <a>Work</a>
+                            <a href='/' style={{ color: getTextColor() }}>Home  </a>
                             <div className={styles.indicator}></div>
                         </div>
                     </Magnetic>
                     <Magnetic>
                         <div className={styles.el}>
-                            <a href='/about'>About</a>
+                            <a href='/work' style={{ color: getTextColor() }}>Work</a>
                             <div className={styles.indicator}></div>
                         </div>
                     </Magnetic>
                     <Magnetic>
                         <div className={styles.el}>
-                            <a>Contact</a>
+                            <a href='/about' style={{ color: getTextColor() }}>About</a>
+                            <div className={styles.indicator}></div>
+                        </div>
+                    </Magnetic>
+                    <Magnetic>
+                        <div className={styles.el}>
+                            <a href='/contact' style={{ color: getTextColor() }}>Contact</a>
                             <div className={styles.indicator}></div>
                         </div>
                     </Magnetic>

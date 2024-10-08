@@ -1,0 +1,171 @@
+.main {
+    height: auto;
+    width: 100%;
+    background-color: #1C1D20;
+    display: flex;
+    justify-content: center;
+    padding-top: 13%;
+    color: white;
+    overflow: hiddenf;
+
+    .left {
+        width: 50%;
+
+        .hh {
+            font-size: 120px;
+            margin-bottom: 90px;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .buttonContainer {
+                display: flex;
+                justify-content: right;
+                margin-top: 50px;
+                position: relative; /* Ensures that the button remains properly positioned */
+                z-index: 1; /* Makes sure the button remains on top */
+            }
+        }
+
+        .formItem {
+            padding: 60px 0px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .labelContainer {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                h1 {
+                    color: rgba(255, 255, 255, 0.3);
+                }
+
+                label {
+                    font-size: 32px;
+                    color: #fff;
+                    margin: 0;
+                    flex: 1;
+                    transition: opacity 0.3s ease;
+                }
+
+                .filled {
+                    opacity: 0.3;
+                }
+            }
+
+            input {
+                background-color: transparent;
+                color: white;
+                border: none;
+                margin-left: 50px;
+                padding: 15px;
+                font-size: 26px;
+                border-radius: 4px;
+                width: 100%;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+
+    .button {
+        width: 200px;
+        height: 200px;
+        background-color: rgba(255, 255, 255, 0.3);
+        color: white;
+        border-radius: 50%;
+        margin-right: 100px;
+        display: flex;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 300px;
+        z-index: 1; /* Ensures that button stays above other content */
+
+        p {
+            font-size: 24px;
+            z-index: 99; /* Ensures that the text is above any background */
+        }
+    }
+
+    .right {
+        width: 20%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        padding: 200px 0px 0px 100px;
+
+        .profileContainer {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+
+            .profileImage {
+                width: 120px;
+                height: 120px;
+                position: relative;
+                border-radius: 50%;
+                overflow: hidden;
+                object-fit: cover;
+                margin-bottom: 100px;
+            }
+
+            .arrow {
+                font-size: 36px;
+                color: white;
+                margin-bottom: 100px;
+            }
+        }
+
+        .contactDetails {
+            text-align: left;
+            margin: 20px 0;
+            margin-bottom: 100px;
+
+            h2 {
+                margin: 0;
+                font-size: 16px;
+                margin-bottom: 20px;
+                color: rgba(255, 255, 255, 0.3);
+            }
+
+            p {
+                margin: 5px 0;
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .socialLinks {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+
+            h2 {
+                margin: 0;
+                font-size: 16px;
+                margin-bottom: 20px;
+                color: rgba(255, 255, 255, 0.3);
+            }
+
+            a {
+                display: inline-block;
+                margin-bottom: 20px;
+                font-size: 24px;
+                color: white;
+                text-decoration: none;
+                position: relative;
+                z-index: 1;
+            }
+        }
+    }
+}

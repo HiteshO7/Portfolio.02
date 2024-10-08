@@ -1,0 +1,45 @@
+.main {
+    height: 100vh; // Ensures the height takes up the full viewport
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column; // Aligning the contents of .main vertically
+    align-items: center;     // Centers horizontally
+}
+
+.title {
+    width: 100%;
+    margin-bottom: 50px;
+    padding:  0px 0px 0px 350px;
+    p{
+    font-size: 5.5em;
+    font-weight: 100;
+    }
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // Creates 3 equal columns
+    gap: 20px;  // Adjust the gap between the grid items
+    width: 80%;
+}
+
+
+.gridItem {
+    padding: 20px;
+
+    h1{
+        font-size: 1.2em;
+        color: #1c1d20;
+        font-weight: normal;
+    }
+    h2{
+        font-size: 42px;
+        color: #1c1d20;
+        font-weight: 400;
+    }
+    p{
+        font-size: 20px;
+        color: #1c1d20;
+    }
+}
