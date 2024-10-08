@@ -65,8 +65,8 @@ export default function ContactMain() {
                 <form className={styles.form} onSubmit={handleSubmit}>
                     {[
                         { id: '01', label: "What's your name?", name: 'name', placeholder: 'Hitesh Thakur ..' },
-                        { id: '02', label: "What's your email?", name: 'email', placeholder: 'Jhon@doe.com' },
-                        { id: '03', label: "What's the name of your organization?", name: 'org', placeholder: 'Jhon &amp; Doe' },
+                        { id: '02', label: "What's your email?", name: 'email', placeholder: '#$#$#@gmail.com' },
+                        { id: '03', label: "What's the name of your organization?", name: 'org', placeholder: 'Apple.inc' },
                         { id: '04', label: 'What services are you looking for?', name: 'services', placeholder: 'Web Design, Web Dev' },
                         { id: '05', label: 'Your message', name: 'message', placeholder: 'Hello Hitesh, can you help me with...*' },
                     ].map(({ id, label, name, placeholder }) => (
